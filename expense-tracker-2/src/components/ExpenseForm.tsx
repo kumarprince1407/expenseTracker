@@ -67,6 +67,10 @@ export const ExpenseForm: React.FC<ExpenseFormProps> = ({
     }
   };
 
+  const navigateToDashBoard = () => {
+    navigate("/");
+  };
+
   const handleChange = (
     e: React.ChangeEvent<
       HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
@@ -81,21 +85,41 @@ export const ExpenseForm: React.FC<ExpenseFormProps> = ({
 
   return (
     <>
+      <h2 className="analytics_text text-2xl text-blue-400 mt-2">
+        Add Expense
+      </h2>
       <form onSubmit={handleSubmit}>
+        <div className="buttonContainer">
+          <button
+            onClick={navigateToDashBoard}
+            style={{
+              width: "14vw",
+              height: "4vh",
+              marginTop: "2vh",
+              color: "whitesmoke",
+              backgroundColor: "#7CD9F5",
+              borderRadius: "4px",
+              marginBottom: "0%",
+            }}
+          >
+            Go To Dashboard
+          </button>
+        </div>
         <div>
           <div className="flex items-center justify-center min-h-screen">
             <div
-              className="expenseForm rounded border border-black"
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "space-around",
-                width: "55vw",
-                height: "80vh",
-              }}
+              // className="expenseForm rounded border border-black"
+              className="expenseForm rounded border border-[#C4E2D8] flex flex-col justify-around w-[55vw] h-[80vh]"
+              // style={{
+              //   display: "flex",
+              //   flexDirection: "column",
+              //   justifyContent: "space-around",
+              //   width: "55vw",
+              //   height: "80vh",
+              // }}
             >
-              <div className="item_description flex justify-between items-center mb-10 mt-10">
-                <label className="label" style={{ marginLeft: "10%" }}>
+              <div className="item_description flex justify-between items-center mb-2 mt-10">
+                <label className="label text-2xl" style={{ marginLeft: "10%" }}>
                   Description:
                 </label>
                 <input
@@ -104,11 +128,21 @@ export const ExpenseForm: React.FC<ExpenseFormProps> = ({
                   value={formData.description}
                   onChange={handleChange}
                   className="border rounded p-2 "
-                  style={{ marginRight: "10%" }}
+                  style={{
+                    marginRight: "10%",
+                    borderTopLeftRadius:
+                      "20px" /* Adjust the value as needed */,
+                    borderTopRightRadius:
+                      "20px" /* Adjust the value as needed */,
+                    borderBottomLeftRadius:
+                      "20px" /* Adjust the value as needed */,
+                    borderBottomRightRadius:
+                      "20px" /* Adjust the value as needed */,
+                  }}
                 />
               </div>
-              <div className="item_amount flex justify-between items-center mb-10 ">
-                <label className="label" style={{ marginLeft: "10%" }}>
+              <div className="item_amount flex justify-between items-center mb-2 ">
+                <label className="label text-2xl" style={{ marginLeft: "10%" }}>
                   Amount:
                 </label>
                 <input
@@ -116,12 +150,12 @@ export const ExpenseForm: React.FC<ExpenseFormProps> = ({
                   name="amount"
                   value={formData.amount}
                   onChange={handleChange}
-                  className="border rounded p-2"
+                  className="border p-2 rounded-tl-[20px] rounded-tr-[20px] rounded-bl-[20px] rounded-br-[20px]"
                   style={{ marginRight: "10%" }}
                 />
               </div>
-              <div className="item_date flex justify-between items-center mb-4">
-                <label className="label" style={{ marginLeft: "10%" }}>
+              <div className="item_date flex justify-between items-center mb-2">
+                <label className="label text-2xl" style={{ marginLeft: "10%" }}>
                   Date:
                 </label>
                 <input
@@ -129,12 +163,12 @@ export const ExpenseForm: React.FC<ExpenseFormProps> = ({
                   name="date"
                   value={formData.date}
                   onChange={handleChange}
-                  className="border rounded p-2 "
+                  className="border p-2 rounded-tl-[20px] rounded-tr-[20px] rounded-bl-[20px] rounded-br-[20px]"
                   style={{ marginRight: "10%", width: "51.5%" }}
                 />
               </div>
-              <div className="item_category flex justify-between items-center mb-4">
-                <label className="label" style={{ marginLeft: "10%" }}>
+              <div className="item_category flex justify-between items-center mb-2">
+                <label className="label text-2xl" style={{ marginLeft: "10%" }}>
                   Category:
                 </label>
                 <select
@@ -142,19 +176,19 @@ export const ExpenseForm: React.FC<ExpenseFormProps> = ({
                   name="category"
                   value={formData.category}
                   onChange={handleChange}
-                  className="border rounded p-2 "
+                  className="border p-2 rounded-tl-[20px] rounded-tr-[20px] rounded-bl-[20px] rounded-br-[20px]"
                   style={{ marginRight: "10%" }}
                 >
                   <option value="">Select a category</option>
-                  <option value="Grocery">Grocery</option>
-                  <option value="Stationary">Stationary</option>
-                  <option value="Travel">Travel</option>
-                  <option value="Miscellaneous">Miscellaneous</option>
-                  <option value="Others">Others</option>
+                  <option value="grocery">Grocery</option>
+                  <option value="stationary">Stationary</option>
+                  <option value="travel">Travel</option>
+                  <option value="miscellaneous">Miscellaneous</option>
+                  <option value="others">Others</option>
                 </select>
               </div>
-              <div className="item_note flex justify-between items-center mb-4">
-                <label className="label" style={{ marginLeft: "10%" }}>
+              <div className="item_note flex justify-between items-center mb-2">
+                <label className="label text-2xl" style={{ marginLeft: "10%" }}>
                   Notes(Optional):
                 </label>
                 <input
@@ -162,7 +196,7 @@ export const ExpenseForm: React.FC<ExpenseFormProps> = ({
                   name="notes"
                   value={formData.notes}
                   onChange={handleChange}
-                  className="border rounded p-2 "
+                  className="border p-2 rounded-tl-[20px] rounded-tr-[20px] rounded-bl-[20px] rounded-br-[20px]"
                   style={{ marginRight: "10%" }}
                 />
               </div>
@@ -171,11 +205,11 @@ export const ExpenseForm: React.FC<ExpenseFormProps> = ({
                   type="submit"
                   style={{
                     width: "14vw",
-                    height: "5vh",
-                    marginTop: "5vh",
+                    height: "4vh",
+                    marginTop: "1vh",
                     color: "whitesmoke",
 
-                    backgroundColor: "#C0F57C",
+                    backgroundColor: "#A6E9D3",
                     borderRadius: "4px",
                   }}
                 >

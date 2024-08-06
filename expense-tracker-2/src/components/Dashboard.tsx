@@ -36,7 +36,8 @@ export const Dashboard = () => {
 
   const goToAnalyticsPage = () => {
     const categoryData = aggregateCategoryData(rowData);
-    navigate("/analytics", { state: { categoryData } });
+    const categoryCounts = countCategoryOccurences(rowData);
+    navigate("/analytics", { state: { categoryData, categoryCounts } });
   };
 
   const columnDefs: ColDef<RowData>[] = [
@@ -65,6 +66,14 @@ export const Dashboard = () => {
     }
   }, [rowData]);
 
+  //Total count
+  const countCategoryOccurences = (data: RowData[]): CategoryData => {
+    return data.reduce((acc: CategoryData, curr: RowData) => {
+      acc[curr.category] = (acc[curr.category] || 0) + 1;
+      return acc;
+    }, {});
+  };
+
   // Graph
   const aggregateCategoryData = (data: RowData[]): CategoryData => {
     return data.reduce((acc: CategoryData, curr: RowData) => {
@@ -76,14 +85,16 @@ export const Dashboard = () => {
   return (
     <>
       <div>
-        <h2>DashBoard</h2>
+        <h2 className="analytics_text text-2xl text-blue-400 mt-2">
+          Dashboard
+        </h2>
 
         <button
           onClick={goToExpenseForm}
           style={{
             width: "14vw",
-            height: "5vh",
-            marginTop: "5vh",
+            height: "4vh",
+            marginTop: "2vh",
             color: "whitesmoke",
             backgroundColor: "#7CD9F5",
             borderRadius: "4px",
@@ -92,29 +103,27 @@ export const Dashboard = () => {
           Add new Expense
         </button>
         <div
-          className="mainContainer flex items-center justify-center min-h-screen"
+          className="mainContainer flex flex-column items-center justify-evenly min-h-screen"
           style={{
             display: "flex",
             flexDirection: "column",
-            justifyContent: "space-evenly",
-            height: "100vh",
+            // justifyContent: "space-evenly",
+            height: "90vh",
           }}
         >
           <div
             className="ag-theme-quartz"
-            style={{ width: "64vw", height: "70%" }}
+            style={{ width: "64vw", height: "60%" }}
           >
             <AgGridReact rowData={rowData} columnDefs={columnDefs} />
           </div>
-        </div>
-        <div className="total" style={{ marginBottom: "15vh" }}>
           <h2 className="total text-2xl"> Total Amount: {totalAmount}</h2>
           <button
             onClick={goToAnalyticsPage}
             style={{
               width: "14vw",
-              height: "5vh",
-              marginTop: "5vh",
+              height: "4vh",
+              marginTop: "0vh",
               color: "whitesmoke",
               backgroundColor: "#7CD9F5",
               borderRadius: "4px",

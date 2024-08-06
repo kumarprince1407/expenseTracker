@@ -1,12 +1,12 @@
+//DetailedAnalytics.tsx - Pie chart
+
 import React from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { AgCharts } from "ag-charts-react";
-import type { AgChartOptions } from "ag-charts-community";
 
 export const DetailedAnalytics = () => {
   const location = useLocation();
   const categoryData = location.state?.categoryData;
-  const navigate = useNavigate();
 
   if (!categoryData) {
     return <p>No data available</p>; // Handle cases where data might not be available
@@ -44,26 +44,22 @@ export const DetailedAnalytics = () => {
     ],
   };
 
-  const goToDashboard = () => {
-    navigate("/");
-  };
-
   return (
     <>
       <div>
-        <p>Detailed Analytics</p>
         <div
           className="mainContainer flex items-center justify-center min-h-screen"
-          style={{ height: "70%" }}
+          style={{ height: "60%" }}
         >
           <div
-            className="analyticsContainer rounded border border-black"
+            // className="analyticsContainer rounded border border-black"
+            className="analyticsContainer"
             style={{
               display: "flex",
               flexDirection: "column",
-              justifyContent: "space-around",
-              width: "70vw",
-              height: "70vh",
+              justifyContent: "space-evenly",
+              width: "40vw",
+              height: "40vh",
             }}
           >
             <AgCharts options={options} />
@@ -95,20 +91,6 @@ export const DetailedAnalytics = () => {
             </div>
           </div>
         </div>
-        <button
-          onClick={goToDashboard}
-          style={{
-            width: "14vw",
-            height: "5vh",
-            marginTop: "5vh",
-            color: "whitesmoke",
-            backgroundColor: "#7CD9F5",
-            borderRadius: "4px",
-            marginBottom: "10%",
-          }}
-        >
-          Go To Dashboard
-        </button>
       </div>
     </>
   );
