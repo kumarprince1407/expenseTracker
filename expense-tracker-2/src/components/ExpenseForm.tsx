@@ -165,10 +165,10 @@ export const ExpenseForm: React.FC<ExpenseFormProps> = ({
                   className="border p-2 rounded-tl-[20px] rounded-tr-[20px] rounded-bl-[20px] rounded-br-[20px] mr-[10%]"
                 />
               </div>
-              <div className="add_button flex justify-evenly items-center">
+              <div className="add_button flex justify-start items-center">
                 <button
                   type="submit"
-                  className="w-[14vw] h-[4vh] mt-[1vh] mb-[2vh] text-[#f5f5f5] bg-[#A6E9D3] rounded-[4px]"
+                  className="w-[14vw] h-[4vh] mt-[2vh] mb-[2vh] ml-[5vw] text-[#f5f5f5] bg-[#A6E9D3] rounded-[4px] "
                 >
                   {expenseId ? "Update" : "Add"} Expense
                 </button>
