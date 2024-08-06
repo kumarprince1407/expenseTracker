@@ -84,7 +84,7 @@ export const Dashboard = () => {
 
   return (
     <>
-      <div>
+      <div className="m-8">
         <h2 className="analytics_text text-2xl text-blue-400 mt-2">
           Dashboard
         </h2>
@@ -94,7 +94,7 @@ export const Dashboard = () => {
           style={{
             width: "14vw",
             height: "4vh",
-            marginTop: "2vh",
+            marginTop: "1vh",
             color: "whitesmoke",
             backgroundColor: "#7CD9F5",
             borderRadius: "4px",
@@ -103,17 +103,17 @@ export const Dashboard = () => {
           Add new Expense
         </button>
         <div
-          className="mainContainer flex flex-column items-center justify-evenly min-h-screen"
+          className="flex flex-col items-center justify-evenly min-h-screen "
           style={{
-            display: "flex",
-            flexDirection: "column",
+            // display: "flex",
+            // flexDirection: "column",//TODO:
             // justifyContent: "space-evenly",
             height: "90vh",
           }}
         >
           <div
             className="ag-theme-quartz"
-            style={{ width: "64vw", height: "60%" }}
+            style={{ width: "64vw", height: "40%" }}
           >
             <AgGridReact rowData={rowData} columnDefs={columnDefs} />
           </div>

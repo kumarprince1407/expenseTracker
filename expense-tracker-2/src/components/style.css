@@ -1,0 +1,9 @@
+@font-face {
+  font-family: "RussilaSerif";
+  src: url("../assets/fonts/rusilla-serif-font/RusillaSerif-2OZpl.otf");
+}
+
+.analytics_text {
+  font-family: "RussilaSerif", sans-serif;
+  font-size: 4em;
+}

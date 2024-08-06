@@ -14,8 +14,12 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <Router>
-        <div className="App">
-          <h1 className="text-4xl font-bold text-blue-500">Expense Manager</h1>
+        {/* <div className="App rounded border-4 border-[#74B3F1] m-5"> */}
+        <div className="App m-5">
+          <h1 className="mainHeading text-6xl font-bold text-[#416FF1] text-left ml-2 mt-2">
+            Expense <br />
+            Manager
+          </h1>
           <Routes>
             <Route path="/" element={<Dashboard />} />
             <Route path="/add_new" element={<ExpenseForm />} />

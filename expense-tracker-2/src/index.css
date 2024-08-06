@@ -5,7 +5,13 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #e1ede9;
+  /* background-color: #e1ede9; */
+  background-image: url("../src/assets/images/abstract-blue-draw.jpg");
+  background-size: cover; /*Ensures the image covers the entire background contain - Ensures the entire image is visible */
+
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  background-position: center; /* Keeps the background image fixed in place */
+  background-attachment: fixed;
 }
 
 code {

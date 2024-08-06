@@ -1,3 +1,8 @@
+@font-face {
+  font-family: "Robolox";
+  src: url("assets/fonts/Roblox-Font-Bold.ttf");
+}
+
 .App {
   text-align: center;
 }
@@ -5,6 +10,11 @@
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+}
+
+.mainHeading {
+  font-family: "Robolox", sans-serif;
+  font-size: 3em;
 }
 
 @media (prefers-reduced-motion: no-preference) {
