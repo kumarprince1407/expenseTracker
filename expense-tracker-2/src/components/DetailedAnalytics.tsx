@@ -48,41 +48,23 @@ export const DetailedAnalytics = () => {
     <>
       <div>
         <div
-          className="mainContainer flex items-center justify-center min-h-screen"
+          // className="mainContainer flex items-center justify-center min-h-screen"
+          className="mainContainer flex items-center justify-center"
+
           // style={{ height: "70%" }}
         >
           <div
             // className="analyticsContainer rounded border border-black"
-            className="analyticsContainer"
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "space-evenly",
-              width: "44vw",
-              height: "44vh",
-            }}
+            className="flex flex-col justify-evenly w-[44vw] h-[44vh]"
           >
             <AgCharts options={options} />
-            <div
-              className="legendContainer"
-              style={{ marginTop: "2rem", textAlign: "center" }}
-            >
+            <div className="legendContainer mt-2 text-center">
               {data.map((item, index) => (
-                <div
-                  key={index}
-                  style={{
-                    display: "inline-block",
-                    marginRight: "1rem",
-                    marginBottom: "0.5rem",
-                  }}
-                >
+                <div key={index} className="inline-block mr-4 mb-1">
                   <span
+                    className="inline-block w-5 h-5 mr-2"
                     style={{
-                      display: "inline-block",
-                      width: "20px",
-                      height: "20px",
                       backgroundColor: colors[index % colors.length],
-                      marginRight: "0.5rem",
                     }}
                   ></span>
                   <span>{item.category}</span>

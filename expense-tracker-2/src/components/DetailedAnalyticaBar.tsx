@@ -54,19 +54,12 @@ export const DetailedAnalyticsBar = () => {
     <>
       <div>
         <div
-          className="mainContainer flex items-center justify-center min-h-screen"
-          // style={{ height: "60%" }}
+          // className="mainContainer flex items-center justify-center min-h-screen"
+          className="flex items-center justify-center"
         >
           <div
             // className="analyticsContainer rounded border border-black"
-            className="analyticsContainer "
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "space-evenly",
-              width: "44vw",
-              height: "44vh",
-            }}
+            className="flex flex-col justify-evenly w-[44vw] h-[44vh]"
           >
             <AgCharts options={options} />
           </div>

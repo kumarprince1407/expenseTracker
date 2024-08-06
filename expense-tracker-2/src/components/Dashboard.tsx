@@ -85,49 +85,22 @@ export const Dashboard = () => {
   return (
     <>
       <div className="m-8">
-        <h2 className="analytics_text text-2xl text-blue-400 mt-2">
-          Dashboard
-        </h2>
+        <h2 className="text-5xl text-blue-400 mt-2">Dashboard</h2>
 
         <button
           onClick={goToExpenseForm}
-          style={{
-            width: "14vw",
-            height: "4vh",
-            marginTop: "1vh",
-            color: "whitesmoke",
-            backgroundColor: "#7CD9F5",
-            borderRadius: "4px",
-          }}
+          className="w-[14vw] h-[4vh] mt-[5vh] mb-[5vh] text-[#f5f5f5] bg-[#7CD9F5] rounded-[4px]"
         >
           Add new Expense
         </button>
-        <div
-          className="flex flex-col items-center justify-evenly min-h-screen "
-          style={{
-            // display: "flex",
-            // flexDirection: "column",//TODO:
-            // justifyContent: "space-evenly",
-            height: "90vh",
-          }}
-        >
-          <div
-            className="ag-theme-quartz"
-            style={{ width: "64vw", height: "40%" }}
-          >
+        <div className="flex flex-col items-center justify-start min-h-screen h-[90vh]">
+          <div className="ag-theme-quartz w-[64vw] h-[40vh]">
             <AgGridReact rowData={rowData} columnDefs={columnDefs} />
           </div>
           <h2 className="total text-2xl"> Total Amount: {totalAmount}</h2>
           <button
             onClick={goToAnalyticsPage}
-            style={{
-              width: "14vw",
-              height: "4vh",
-              marginTop: "0vh",
-              color: "whitesmoke",
-              backgroundColor: "#7CD9F5",
-              borderRadius: "4px",
-            }}
+            className="w-[14vw] h-[5vh] mt-[2vh] mb-[2vh] text-[#f5f5f5] bg-[#7CD9F5] rounded-[4px]"
           >
             Detailed Analytics
           </button>

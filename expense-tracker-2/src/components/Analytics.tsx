@@ -11,27 +11,20 @@ export const Analytics = () => {
 
   return (
     <>
-      <p className="analytics_text text-2xl text-blue-400 mt-2">
-        Detailed Analytics
-      </p>
-      <div className="graph_container ">
-        <div className="graphs flex flex-row justify-evenly">
-          <DetailedAnalytics />
-          <DetailedAnalyticsBar />
+      <div className="flex flex-col items-center justify-start min-h-screen">
+        <p className=" text-5xl text-blue-400 mt-5">Detailed Analytics</p>
+        <div>
+          <div className="graphs flex flex-row justify-start">
+            <DetailedAnalytics />
+            <DetailedAnalyticsBar />
+          </div>
+          <button
+            onClick={goToDashboard}
+            className="w-[14vw] h-[4vh] mt-[5vh] mb-[2vh] text-[#f5f5f5] bg-[#7CD9F5] rounded-[4px]"
+          >
+            Go To Dashboard
+          </button>
         </div>
-        <button
-          onClick={goToDashboard}
-          style={{
-            width: "14vw",
-            height: "4vh",
-            color: "whitesmoke",
-            backgroundColor: "#7CD9F5",
-            borderRadius: "4px",
-            marginBottom: "5%",
-          }}
-        >
-          Go To Dashboard
-        </button>
       </div>
     </>
   );
